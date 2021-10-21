@@ -1,0 +1,13 @@
+package com.example.hospital.repository;
+
+import com.example.hospital.entity.Appointment;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.Optional;
+
+@Repository
+public interface AppointmentRepository extends JpaRepository<Appointment,Integer> {
+    Appointment findByAppointmentId(Integer appointmentId);
+
+}
