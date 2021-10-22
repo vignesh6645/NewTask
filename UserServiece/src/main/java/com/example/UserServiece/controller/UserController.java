@@ -41,7 +41,7 @@ public class UserController {
         return restTemplate.getForObject(uri,String.class);
     }
 
-    @GetMapping("/getAll")
+    @GetMapping("/getAllPatient")
     public String getMsg(){
 
         URI uri = discoveryClient.getInstances("hospitalManagement").stream()
@@ -49,7 +49,7 @@ public class UserController {
                 .map(s -> s.resolve("/patient/patient/{patientId}")).get();
         return restTemplate.getForObject(uri,String.class);
     }
-    @GetMapping("/getAll")
+    @GetMapping("/getAllDoctor")
     public String getDoctor(){
 
         URI uri = discoveryClient.getInstances("hospitalManagement").stream()
@@ -57,7 +57,7 @@ public class UserController {
                 .map(s -> s.resolve("/doctor/getById/{doctorId}")).get();
         return restTemplate.getForObject(uri,String.class);
     }
-    @GetMapping("/getAll")
+    @GetMapping("/getAllAppointment")
     public String getAppointment(){
 
         URI uri = discoveryClient.getInstances("hospitalManagement").stream()
@@ -66,7 +66,7 @@ public class UserController {
         return restTemplate.getForObject(uri,String.class);
     }
 
-    @GetMapping("/getAll")
+    @GetMapping("/getAllDisease")
     public String getDisease(){
 
         URI uri = discoveryClient.getInstances("hospitalManagement").stream()
